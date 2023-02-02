@@ -2,13 +2,6 @@ DeletingState = Class { __includes = State }
 
 local Selection = exports['fivepunch-character-selection']
 
-local function InstructionalButton(controlButton, text)
-    ScaleformMovieMethodAddParamPlayerNameString(controlButton)
-    BeginTextCommandScaleformString("STRING")
-    AddTextComponentSubstringKeyboardDisplay(text)
-    EndTextCommandScaleformString()
-end
-
 function DeletingState:init()
     self.transitioning = false
 

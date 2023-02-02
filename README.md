@@ -10,7 +10,7 @@ Check the documentation to explore all your possibilities.
 
 - [Fivepunch website](https://fivepunch.io)
 - [Fivepunch store](https://fivepunch.tebex.io)
-- [Documentations](https://docs.fivepunch.io/resources/fivepunch-character-selection)
+- [Documentation](https://docs.fivepunch.io/resources/fivepunch-character-selection)
 
 ## Preview
 

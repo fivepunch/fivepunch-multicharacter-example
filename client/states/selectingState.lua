@@ -2,13 +2,6 @@ SelectingState = Class { __includes = State }
 
 local Selection = exports['fivepunch-character-selection']
 
-local function InstructionalButton(controlButton, text)
-    ScaleformMovieMethodAddParamPlayerNameString(controlButton)
-    BeginTextCommandScaleformString("STRING")
-    AddTextComponentSubstringKeyboardDisplay(text)
-    EndTextCommandScaleformString()
-end
-
 function SelectingState:init()
     self.scaleform = RequestScaleformMovie("instructional_buttons")
 

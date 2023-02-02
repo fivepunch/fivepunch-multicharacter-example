@@ -11,6 +11,7 @@ lua54 'yes'
 client_script {
     '@fivepunch-character-selection/lib/class.lua',
     '@fivepunch-character-selection/lib/stateMachine.lua',
+    'client/instructionalButtons.lua',
     'client/states/selectingState.lua',
     'client/states/deletingState.lua',
     'client/main.lua'
