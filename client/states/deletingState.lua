@@ -77,12 +77,8 @@ function DeletingState:update()
 
     -- You should use keymappings instead of this on your server.
 
-    if IsDisabledControlJustPressed(0, 202) then -- ESC
+    if IsDisabledControlJustPressed(0, 202) then -- Backspace
         gStateMachine:change('selecting')
-    elseif IsDisabledControlJustPressed(0, 189) then -- Left arrow
-        Selection:previousPage()
-    elseif IsDisabledControlJustPressed(0, 190) then -- Right arrow
-        Selection:nextPage()
     end
 
     DrawScaleformMovieFullscreen(self.scaleform, 255, 255, 255, 255, 0)
