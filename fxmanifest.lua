@@ -1,16 +1,16 @@
 fx_version 'cerulean'
 game { 'gta5' }
 
-title 'Example script'
-description 'Example script to consume the Fivepunch character selection API.'
+title 'Fivepunch multicharacter example'
+description 'Example script to consume the Fivepunch multicharacter API.'
 author 'Fivepunch https://fivepunch.io'
-version '1.0.0'
+version '1.1.0'
 
 lua54 'yes'
 
 client_script {
-    '@fivepunch-character-selection/lib/class.lua',
-    '@fivepunch-character-selection/lib/stateMachine.lua',
+    '@fivepunch-multicharacter/lib/class.lua',
+    '@fivepunch-multicharacter/lib/stateMachine.lua',
     'client/instructionalButtons.lua',
     'client/states/selectingState.lua',
     'client/states/deletingState.lua',
@@ -18,5 +18,5 @@ client_script {
 }
 
 dependencies {
-    'fivepunch-character-selection'
+    'fivepunch-multicharacter'
 }

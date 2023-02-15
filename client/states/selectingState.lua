@@ -1,6 +1,6 @@
 SelectingState = Class { __includes = State }
 
-local Selection = exports['fivepunch-character-selection']
+local Multicharacter = exports['fivepunch-multicharacter']
 
 function SelectingState:init()
     self.scaleform = RequestScaleformMovie("instructional_buttons")
@@ -18,7 +18,7 @@ function SelectingState:init()
 
     BeginScaleformMovieMethod(self.scaleform, "SET_DATA_SLOT")
     ScaleformMovieMethodAddParamInt(1)
-    InstructionalButton(GetControlInstructionalButton(1, 194, false), "Exit character selection")
+    InstructionalButton(GetControlInstructionalButton(1, 194, false), "Exit character Multicharacter")
     EndScaleformMovieMethod()
 
     BeginScaleformMovieMethod(self.scaleform, "SET_DATA_SLOT")
@@ -52,14 +52,14 @@ function SelectingState:init()
     ScaleformMovieMethodAddParamInt(80)
     EndScaleformMovieMethod()
 
-    Selection:onCharacterSelect(function(character)
+    Multicharacter:onCharacterSelect(function(character)
         print('Character ' .. character.name .. ' selected!')
 
         gStateMachine:done() -- No need to transitioning flag
 
-        Selection:flipTheBird(character, function()
-            Selection:deleteCharacter(character)
-            Selection:setOutOfCharacterSelection()
+        Multicharacter:flipTheBird(character, function()
+            Multicharacter:deleteCharacter(character)
+            Multicharacter:setOutOfMulticharacter()
         end)
     end)
 
@@ -81,11 +81,11 @@ function SelectingState:update()
 
     if IsDisabledControlJustPressed(0, 202) then -- ESC
         gStateMachine:done()
-        Selection:setOutOfCharacterSelection()
+        Multicharacter:setOutOfMulticharacter()
     elseif IsDisabledControlJustPressed(0, 189) then -- Left arrow
-        Selection:previousPage()
+        Multicharacter:previousPage()
     elseif IsDisabledControlJustPressed(0, 190) then -- Right arrow
-        Selection:nextPage()
+        Multicharacter:nextPage()
     elseif IsDisabledControlJustPressed(0, 214) then -- Delete
         gStateMachine:change('deleting')
     end

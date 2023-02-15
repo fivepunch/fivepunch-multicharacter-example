@@ -1,4 +1,4 @@
---[[ 
+--[[
     States
 
     - Selecting state:
@@ -8,7 +8,7 @@
             Left arrow -> Previous page
             Right arrow -> Next page
             Delete -> Transition to delete character
-    
+
     - Deleting state:
         Label: 'Delete a character'
         Commands:
@@ -16,8 +16,7 @@
             Left Arrow -> Previous page
             Right arrow -> Next page
  ]]
-
-local Selection = exports['fivepunch-character-selection']
+local Multicharacter = exports['fivepunch-multicharacter']
 
 local characters = {
     { identifier = 1, name = 'Character 1', model = 'player_zero' },
@@ -36,21 +35,30 @@ function enterSelection()
         ['deleting'] = function() return DeletingState() end,
     })
 
-    Selection:onCharacterSpawn(function(character)
+    Multicharacter:onCharacterSpawn(function(character)
         print('Character ' .. character.name .. ' spawned!')
     end)
 
-    Selection:setIntoCharacterSelection(characters)
+    Multicharacter:setIntoCharacterSelection(characters)
 
     gStateMachine:change('selecting')
 end
 
 function exitSelection()
-    gStateMachine:done()
-    gStateMachine = nil
+    if gStateMachine then
+        gStateMachine:done()
+        gStateMachine = nil
+    end
 
-    Selection:setOutOfCharacterSelection()
+    Multicharacter:setOutOfMulticharacter()
 end
 
 RegisterCommand('enter', enterSelection, false)
 RegisterCommand('exit', exitSelection, false)
+RegisterCommand('creation', function()
+    Multicharacter:setIntoCharacterCreation()
+
+    Citizen.Wait(5000)
+
+    Multicharacter:setOutOfMulticharacter()
+end, false)
