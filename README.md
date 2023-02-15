@@ -1,8 +1,8 @@
-# fivepunch-character-selection-example
+# fivepunch-multicharacter-example
 
 Embrace the spirit of Los Santos, @#$% those cute apartments.
 
-The **fivepunch-character-selection** is a fully customizable and well documented character selection script. The code contained is this repository is just an example of what can be done using the API exposed by the resource.
+The **fivepunch-multicharacter** is a fully customizable and well documented multicharacter script. The code contained is this repository is just an example of what can be done using the API exposed by the resource.
 
 Check the documentation to explore all your possibilities.
 
@@ -10,7 +10,7 @@ Check the documentation to explore all your possibilities.
 
 - [Fivepunch website](https://fivepunch.io)
 - [Fivepunch store](https://fivepunch.tebex.io)
-- [Documentation](https://docs.fivepunch.io/resources/fivepunch-character-selection)
+- [Documentation](https://docs.fivepunch.io/resources/fivepunch-multicharacter)
 
 ## Preview
 
