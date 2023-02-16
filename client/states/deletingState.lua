@@ -1,6 +1,6 @@
 DeletingState = Class { __includes = State }
 
-local Selection = exports['fivepunch-character-selection']
+local Multicharacter = exports['fivepunch-multicharacter']
 
 function DeletingState:init()
     self.transitioning = false
@@ -39,16 +39,16 @@ function DeletingState:init()
     ScaleformMovieMethodAddParamInt(80)
     EndScaleformMovieMethod()
 
-    Selection:onCharacterSelect(function(character)
+    Multicharacter:onCharacterSelect(function(character)
         print('Character ' .. character.name .. ' deleted!')
 
         self.transitioning = true
 
-        Selection:flipTheBird(character, function()
+        Multicharacter:flipTheBird(character, function()
             self.transitioning = false
 
-            Selection:deleteCharacter(character)
-            Selection:setSelecting()
+            Multicharacter:deleteCharacter(character)
+            Multicharacter:setSelecting()
         end)
     end)
 
